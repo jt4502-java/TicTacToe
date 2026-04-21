@@ -1,0 +1,30 @@
+
+public class TicTacToe {
+    static char[][] board = {
+        {'-', '-', '-'},
+        {'-', '-', '-'},
+        {'-', '-', '-'}
+    };
+    public static void main(String[] args) {
+        int row = 1;
+        int col = 1;
+        boolean result = isValidMove(row, col);
+
+        System.out.println("Is move valid? " + result);
+    }
+    /**
+     * Checks if the given row and column are within bounds
+     * and if the target cell is empty.
+     * Input: row, column
+     * Output: true if valid, false otherwise
+     */
+    static boolean isValidMove(int row, int col) {
+        if (row < 0 || row > 2 || col < 0 || col > 2) {
+            return false;
+        }
+        if (board[row][col] != '-') {
+            return false;
+        }
+        return true;
+    }
+}
